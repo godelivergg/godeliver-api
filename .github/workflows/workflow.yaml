@@ -3,17 +3,64 @@ name: Continuos Integration
 on: [pull_request, push]
 
 jobs:
-  continuos-integrations:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
       - uses: actions/checkout@v3
-      - name: using Noje.js
+
+      - name: Using Noje.js
         uses: actions/setup-node@v2
         with:
           node-version: 18.x
-      - name: run install, build and teste  
-        run: |
-          npm install
-          npm run build
-          npm run test
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: run install and build 
+        run: npm run build
+  test:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v3
+
+      - name: Using Noje.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests 
+        run: npm run test
+  coverage:
+    runs-on: ubuntu-latest
+
+    needs: test
+
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v3
+
+      - name: Using Noje.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run coverage
+        run: test:cov
+
+    - name: Upload coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: coverage.xml
