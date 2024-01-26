@@ -1,0 +1,23 @@
+services:
+  dbpostgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbpostgres-godeliver-volume:/data/db
+    restart: always
+    environment:
+      - ./.env
+  api:
+    container_name: goldeliver-api
+    build: ./
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - dbpostgres
+    environment:
+      - ./.env
+
+volumes:
+  dbpostgres-godeliver-volume:
