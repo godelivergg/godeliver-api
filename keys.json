@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "godeliver-api",
+  "private_key_id": "34d93a3015c7d6c9edd17b7e29ceb0379726d3ba",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDhrwauvlkoIoB6\nTlB6KfVOsTDglH9FiBO4AmmGMnbVguNbSNuBkyw/7FUsoINguB6/+YOJViqL5Qr+\nU0rjET4lnqS+D5yGbL9YP/fgrB0WKb7ZJeE0OS3oI1NebzS5C8ap8F0n5/Irm5Bf\n7AWKZrbHx3Vycp4wTB3QPQghMHN3vO4oPitT0CAQtweilW1LuGuN41Hlbkj9ZER5\nQ7YFJH0N3GiyFnQg0HPfkXlaTNRrVnEMoSm3wWWiahUuDTwGBncePcpV6UygIPrj\nTky8kni/YF1aTg4+OMgCF9XpTVa+UgjukipwVUh2BDvJLBvV95O8iUB8pRCG0BOh\nDDrQKv9pAgMBAAECggEAA44JuWi3J81ihhd3GtpPvZJHiYOqFr+XeLkINEk8NPQp\nJG/bDhXyE8mwGviMr58G1Ct+eZ3S8SQsKA7Kaa9rJRWNu8HfZQCptoUMOjML1dfV\n5HHwmhPiflSvUTGVCR5ZET+ZGaVRW7cWFZfp2G2/KE0JTQ9M7ZU6Jpfatm2FP0tB\n4WOkPTwsHVrsjiDKn5qn++RBstA9kxXv7AWoU/EF4OGozVIzdMQNtqV7ZCh61DxB\nHI8wEBVEbh3o8gw1ZSAz4yLSOx2z7dahaRyRqLkPQUcMgVDSSTbRZ5FJNj0gfJjq\nP5taqNW7LFjVUPXiLr5qdYOYgcK5AdyfZBvDwFtErwKBgQDwxEhp7OpTDLIsihVk\nkb6DabY7nZGnCkJc54V5rE8ctPBXfqIvuSdrE/7NyxDle4rnzysRGLeMJT7Wxjqt\n+OEPgvTLc4w9ipc32tbdaXWImXlAp0t9H74WswoLFh+6hLC5xf5b2ye6gib1UHnO\nPvbOXPUNp8+YbHHlhhbe9iGdCwKBgQDv9nEyo9Nv8DHpvS28/c52QKKi/2O3OIRh\nJOFwGk15EiLtOPVzaEDI1q8a8laLvKnlo0Ln0vXIrd08SImcRwcMKcDVI2ckFCJ2\nPrT+RKA0YrvXl9+TN9j/oKtx0LBLbIrBbUUachCcsEkV6qXePFBARQ4hSNYSgWAg\nSNj5Ue9V2wKBgQC4d2qT3bTa1ItenJ0vZIr23HOG0X7a4H1f+PLG+kHS2L6cCqXw\nsoeE/tjmi4Lyj+kpGg0BGFLoyVCP9WjYCitFWyx7BJiaPikF3mFpWnd2pT/FTWgF\nAeD+O0ain9zHZwqQCyaK8ipKN5XptjLc1lj6WzZVtBDV06CgHlA/m4y9aQKBgG2Q\nBUFM4cZTUkbZtJ989x6xBlEL8JiAepjsQO5xY/wqlr3fatqFuEa7FvpjubZVrvEF\nqQ+2F7jIAaJ7sDElkQcxrTTj1Dz54H5CxVrvNIKWrhOS6WcLcc3Nq1ntIgFeDsCg\nRpP7jrAsIUKbf55HxZCCtx/lZLDQV3aGLGMx0OhPAoGAdQBKRhb2Ydm/aUVMxcq/\n+W5GzNBTINfeRHI4AnbeAzYdc8RnRyhn9yqBON4Yo0Z+kuDfApNf5FYGtJiZvjbw\nj3EL7Z9QI6Iz2OQxhiQerozEQ+J/6QZjZd2NJGZAZ4xO9nn68cyFJej+5zgF4TFy\nl98GMzrUYZAabh6KcgstBy8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "github-actions@godeliver-api.iam.gserviceaccount.com",
+  "client_id": "114828646891841515482",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/github-actions%40godeliver-api.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
