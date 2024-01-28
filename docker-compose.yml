@@ -6,8 +6,8 @@ services:
     volumes:
       - dbpostgres-godeliver-volume:/data/db
     restart: always
-    environment:
-      - ./.env
+    env_file:
+      - .env
   api:
     container_name: goldeliver-api
     build: ./
@@ -16,8 +16,8 @@ services:
       - 3000:3000
     depends_on:
       - dbpostgres
-    environment:
-      - ./.env
+    env_file:
+      - .env
 
 volumes:
   dbpostgres-godeliver-volume:
