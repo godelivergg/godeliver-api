@@ -2,12 +2,14 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { JwtAuthGuard } from './auth/jwtAuth.guard';
+import { LoggerModule } from './helpers/logger/logger.module';
 
 describe('AppController', () => {
   let appController: AppController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
+      imports: [LoggerModule],
       controllers: [AppController],
       providers: [AppService],
     })
