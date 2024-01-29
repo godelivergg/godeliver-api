@@ -1,9 +1,13 @@
-import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import { CanActivate, ExecutionContext, Injectable, Inject } from '@nestjs/common';
 import * as JwtService from '@nestjs/jwt';
+import { LoggerInterface } from 'src/helpers/logger/logger.interface';
 
 @Injectable()
 export class JwtAuthGuard implements CanActivate {
-  constructor(private readonly jwtService: JwtService.JwtService) { }
+  constructor(
+    private readonly jwtService: JwtService.JwtService,
+    @Inject('LoggerInterface') private readonly logger: LoggerInterface
+  ) { }
 
   async canActivate(
     context: ExecutionContext,
@@ -19,9 +23,10 @@ export class JwtAuthGuard implements CanActivate {
       const decoded = await this.jwtService.verifyAsync(token);
       request.user = decoded;
 
+      this.logger.logMessage(`Token autenticado com sucesso! Usuário: ${decoded.email}`)
       return true;
     } catch (error) {
-      console.log(error)
+      this.logger.logMessage(`Erro ao autenticar! Detalhes: ${error}`)
     }
 
     return false;
