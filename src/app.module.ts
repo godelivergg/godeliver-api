@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from './helpers/logger/logger.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { UserModule } from './app/user/user.module';
 import { ProductModule } from './app/product/product.module';
+import { ImportModule } from './app/import/import.module';
 
 @Module({
   imports: [
@@ -31,9 +30,10 @@ import { ProductModule } from './app/product/product.module';
     }),
     LoggerModule,
     UserModule,
-    ProductModule
+    ProductModule,
+    ImportModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule { }
