@@ -7,8 +7,6 @@ import { GCPLoggerService, LocalLoggerService } from './logger.service';
     ConfigModule.forRoot(),
   ],
   providers: [
-    GCPLoggerService,
-    LocalLoggerService,
     {
       provide: 'LoggerInterface',
       useClass: process.env.NODE_ENV === 'local' ? LocalLoggerService : GCPLoggerService,

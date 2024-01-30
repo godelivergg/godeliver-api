@@ -15,3 +15,13 @@ export const ProductMessagesHelper = {
 
     ERROR_GET_PRODUCT: 'Erro ao consultar Produto:',
 };
+
+
+export const ImportMessagesHelper = {
+    CREATE_IMPORT: 'Criando importação! Id: ',
+    FINISH_IMPORT: 'Finalizando importação! Id: ',
+    CREATE_IMPORT_ERROR: 'Erro ao criar importação! Id: ',
+    FINISH_IMPORT_ERROR: 'Erro ao finalizar importação! Id: ',
+    ERROR_GET_IMPORT: 'Erro ao consultar Importação!',
+};
+
