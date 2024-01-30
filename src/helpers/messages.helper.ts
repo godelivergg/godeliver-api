@@ -8,3 +8,10 @@ export const UserMessagesHelper = {
 
     ERROR_GET_USER: 'Erro ao consultar usuário:',
 };
+
+export const ProductMessagesHelper = {
+    SUCCESS_PRODUCT: 'Produto inserido com sucesso:',
+    ERROR_PRODUCT: 'Produto não inserido:',
+
+    ERROR_GET_PRODUCT: 'Erro ao consultar Produto:',
+};
