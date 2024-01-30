@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from './helpers/logger/logger.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { UserModule } from './app/user/user.module';
+import { ProductModule } from './app/product/product.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { UserModule } from './app/user/user.module';
       } as TypeOrmModuleOptions),
     }),
     LoggerModule,
-    UserModule
+    UserModule,
+    ProductModule
   ],
   controllers: [AppController],
   providers: [AppService],
