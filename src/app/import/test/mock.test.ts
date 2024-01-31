@@ -15,7 +15,7 @@ export const importEntityList: ImportEntity[] = [
 
 export const importRequestMock = {
     headers: {
-        id: 'your-id-value',
-        finished: 'your-finished-value',
+        id: '1',
+        finished: true,
     },
 };

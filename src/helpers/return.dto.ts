@@ -4,4 +4,8 @@ export interface ReturnDto {
     status: HttpStatus;
     message?: string;
     records?: any;
+    pagination?: {
+        offset: number;
+        limit: number;
+    }
 }
