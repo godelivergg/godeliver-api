@@ -17,7 +17,7 @@ import { OrderModule } from './app/order/order.module';
       useFactory: (configService: ConfigService) =>
       ({
         type: process.env.TYPEORM_CONNECTION,
-        host: configService.get('POSTGRES_HOST', 'localhost'),
+        host: configService.get('POSTGRES_HOST', ''),
         port: Number(configService.get('POSTGRES_PORT', 5432)),
         username: configService.get('POSTGRES_USER', ''),
         password: configService.get('POSTGRES_PASSWORD', ''),
