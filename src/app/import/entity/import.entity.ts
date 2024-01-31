@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeUpdate } from "typeorm"
+import * as moment from 'moment';
 
 @Entity({ name: 'imports' })
 export class ImportEntity {
@@ -14,12 +15,12 @@ export class ImportEntity {
     @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: string;
 
-    @Column({ name: 'finished_at', nullable: true })
-    finishedAt: Date
+    @Column({ name: 'finished_at', nullable: true, type: 'date' })
+    finishedAt: string
 
     @BeforeUpdate()
     updateFinishedAt() {
-        this.finishedAt = new Date();
+        this.finishedAt = moment().format();
     }
 
     constructor(importItem?: Partial<ImportEntity>) {

@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable, Inject } from '@nestjs/common';
 import * as JwtService from '@nestjs/jwt';
-import { LoggerInterface } from 'src/helpers/logger/logger.interface';
+import { LoggerInterface } from '../helpers/logger/logger.interface';
 
 @Injectable()
 export class JwtAuthGuard implements CanActivate {

@@ -6,7 +6,7 @@ export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ unique: true })
+    @Column({ unique: true, name: 'user_external_id' })
     @MinLength(1)
     @MaxLength(10)
     userExternalId: number;

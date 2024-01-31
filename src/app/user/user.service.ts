@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, HttpException, HttpStatus, Inject } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus, Inject } from '@nestjs/common';
 import { FindManyOptions, Repository } from 'typeorm';
 import { UserEntity } from './entity/user.entity';
 import {
@@ -7,7 +7,7 @@ import {
 } from '../../helpers/messages.helper';
 import { UserDto } from './dto/user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { LoggerInterface } from 'src/helpers/logger/logger.interface';
+import { LoggerInterface } from '../../helpers/logger/logger.interface';
 
 @Injectable()
 export class UserService {
