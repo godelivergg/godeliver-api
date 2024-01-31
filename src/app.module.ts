@@ -16,7 +16,7 @@ import { OrderModule } from './app/order/order.module';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) =>
       ({
-        type: process.env.TYPEORM_CONNECTION,
+        type: 'postgres',
         host: configService.get('POSTGRES_HOST', ''),
         port: Number(configService.get('POSTGRES_PORT', 5432)),
         username: configService.get('POSTGRES_USER', ''),
