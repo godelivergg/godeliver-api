@@ -25,3 +25,8 @@ export const ImportMessagesHelper = {
     ERROR_GET_IMPORT: 'Erro ao consultar Importação!',
 };
 
+
+export const OrderMessagesHelper = {
+    ERROR_GET_ORDER: 'Erro ao consultar pedidos!',
+};
+

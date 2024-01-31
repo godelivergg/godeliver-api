@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { createLogger, format, transports } from 'winston';
+import { createLogger, format } from 'winston';
 import { LoggingWinston } from '@google-cloud/logging-winston';
 import { LoggerInterface } from './logger.interface';
 

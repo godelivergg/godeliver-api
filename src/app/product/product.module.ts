@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ProductService } from '../product/product.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductEntity } from './entity/product.entity';
-import { LoggerModule } from 'src/helpers/logger/logger.module';
+import { LoggerModule } from '../../helpers/logger/logger.module';
 
 @Module({
   imports: [

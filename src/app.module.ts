@@ -6,13 +6,11 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { UserModule } from './app/user/user.module';
 import { ProductModule } from './app/product/product.module';
 import { ImportModule } from './app/import/import.module';
+import { OrderModule } from './app/order/order.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    JwtModule.register({
-      secret: process.env.JWT_SECRET_KEY
-    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -31,7 +29,8 @@ import { ImportModule } from './app/import/import.module';
     LoggerModule,
     UserModule,
     ProductModule,
-    ImportModule
+    ImportModule,
+    OrderModule
   ],
   controllers: [],
   providers: [],
