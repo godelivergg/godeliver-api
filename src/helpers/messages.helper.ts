@@ -27,6 +27,14 @@ export const ImportMessagesHelper = {
 
 
 export const OrderMessagesHelper = {
+    CREATE_ORDER: 'Pedido inserido com sucesso:',
+    ERROR_ORDER: 'Erro ao inserir pedido:',
     ERROR_GET_ORDER: 'Erro ao consultar pedidos!',
 };
+
+export const OrderProductsMessagesHelper = {
+    CREATE_ORDER_RELATIONS: 'Relacionamento de pedido e produtos inserido com sucesso!',
+    ERROR_ORDER_RELATIONS: 'Erro ao relacionar pedido com produto!',
+};
+
 
