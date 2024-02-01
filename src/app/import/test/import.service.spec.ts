@@ -27,10 +27,7 @@ describe('ImportService', () => {
           },
         },
       ],
-    }).overrideGuard(JwtAuthGuard)
-      .useValue({
-        canActivate: jest.fn().mockReturnValue(true),
-      }).compile();
+    }).compile();
 
     service = module.get<ImportService>(ImportService);
     importRepository = module.get<Repository<ImportEntity>>(
@@ -43,7 +40,7 @@ describe('ImportService', () => {
   });
 
   describe('findAll', () => {
-    it('test should return imports successfuly', async () => {
+    it('test should return imports successfully', async () => {
       const result = await service.findAll({
         id: '1',
         finished: true
@@ -66,7 +63,7 @@ describe('ImportService', () => {
   });
 
   describe('createDefault', () => {
-    it('test should create a new import entity successfuly', async () => {
+    it('test should create a new import entity successfully', async () => {
       const result = await service.createDefault();
 
       expect(result).toEqual(mocks.importEntityList[0]);
@@ -82,7 +79,7 @@ describe('ImportService', () => {
   });
 
   describe('finishImport', () => {
-    it('test should finish a import successfuly', async () => {
+    it('test should finish a import successfully', async () => {
       const result = await service.finishImport('1');
 
       expect(result).toEqual(mocks.importEntityList[0]);

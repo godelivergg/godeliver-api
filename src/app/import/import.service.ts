@@ -64,7 +64,7 @@ export class ImportService {
 
         try {
             this.importRepository.merge(importItem, { finished: true });
-            this.logger.logMessage(`${ImportMessagesHelper.FINISH_IMPORT} ${importId}`)
+            this.logger.logMessage(`${ImportMessagesHelper.FINISH_IMPORT} ${importItem.id}`)
 
             return await this.importRepository.save(importItem);
         } catch (error) {

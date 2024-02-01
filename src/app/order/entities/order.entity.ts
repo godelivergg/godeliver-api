@@ -22,11 +22,15 @@ export class OrderEntity {
     @CreateDateColumn({ name: 'created_at' })
     createdAt: string;
 
+    @CreateDateColumn({ name: 'updated_at' })
+    updatedAt: string;
+
     constructor(order?: Partial<OrderEntity>) {
         this.id = order?.id;
         this.orderExternalId = order?.orderExternalId;
         this.orderDate = order?.orderDate;
         this.user = order?.user;
         this.createdAt = order?.createdAt;
+        this.updatedAt = order?.updatedAt;
     }
 }

@@ -41,8 +41,11 @@ export class UserService {
     async createOrUpdate(data: UserDto) {
 
         try {
-            const user = await this.userRepository.upsert(data, ['userExternalId']);
+            const userUpsert = await this.userRepository.upsert(data, ['userExternalId']);
             this.logger.logMessage(`${UserMessagesHelper.SUCCESS_USER} ${data.name}`)
+
+            const userUpsertId = userUpsert.identifiers[0].id
+            const user: UserEntity = await this.findOne({ where: { id: userUpsertId } });
 
             return user
         }

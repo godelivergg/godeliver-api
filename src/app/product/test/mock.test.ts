@@ -20,3 +20,12 @@ export const newProductEntity: ProductEntity = new ProductEntity({
 export const createBody: ProductDto = {
     productExternalId: 1,
 };
+
+
+export const productUpsert = {
+    identifiers: [
+        {
+            id: 1
+        }
+    ]
+};

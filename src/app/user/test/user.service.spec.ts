@@ -21,7 +21,7 @@ describe('UserService', () => {
           provide: getRepositoryToken(UserEntity),
           useValue: {
             findOne: jest.fn().mockResolvedValue(mockUser.userEntityList[0]),
-            upsert: jest.fn().mockResolvedValue(mockUser.newUserEntity),
+            upsert: jest.fn().mockResolvedValue(mockUser.userUpsert),
           },
         },
         {
@@ -47,12 +47,11 @@ describe('UserService', () => {
   });
 
   describe('findOne', () => {
-    it('test should return a user entity successfuly', async () => {
+    it('test should return a user entity successfully', async () => {
       const result = await service.findOne({ where: { id: '1' } });
 
       expect(result).toEqual(mockUser.userEntityList[0]);
       expect(userRepository.findOne).toHaveBeenCalledTimes(1);
-      // expect(logger.logMessage).toHaveBeenCalledTimes(0)
     });
 
     it('test should throw an exception when internal error server', async () => {
@@ -66,15 +65,14 @@ describe('UserService', () => {
   });
 
   describe('createOrUpdate', () => {
-    it('test should create a new user entity successfuly', async () => {
+    it('test should create a new user entity successfully', async () => {
       const result = await service.createOrUpdate(mockUser.createBody);
 
       expect(result).toEqual(mockUser.userEntityList[0]);
-      // expect(logger.logMessage).toHaveBeenCalledWith('Usuário inserido com sucesso: fake-name');
     });
 
     it('test should throw an exception when internal error server', async () => {
-      jest.spyOn(userRepository, 'upsert').mockRejectedValueOnce(new Error());
+      jest.spyOn(userRepository, 'findOne').mockRejectedValueOnce(new Error());
 
       expect(
         service.createOrUpdate(mockUser.createBody)

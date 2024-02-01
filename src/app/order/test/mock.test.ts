@@ -1,5 +1,8 @@
+import { Between } from "typeorm";
 import { productEntityList } from "../../product/test/mock.test";
 import { userEntityList } from "../../user/test/mock.test";
+import { OrderDto } from "../dto/order.dto";
+import { OrderProductsDto } from "../dto/orderProducts.dto";
 import { OrderEntity } from "../entities/order.entity";
 import { OrderProductsEntity } from "../entities/order_products.entity";
 import * as types from "../types/order.types"
@@ -89,5 +92,45 @@ export const headerParams = {
     options: {
         orderExternalId: 1,
         user: { name: 'teste' }
+    }
+};
+
+export const returnUpsertOrder = {
+    identifiers: [
+        {
+            id: 1
+        }
+    ]
+}
+
+export const orderCreate: OrderDto = {
+    orderDate: 20230130,
+    orderExternalId: 1,
+    user: userEntityList[0]
+}
+
+export const orderProductsCreate: OrderProductsDto = {
+    order: orderEntityList[0],
+    product: productEntityList[0],
+    productValue: 22.50
+}
+
+export const ordersRequestAllHeadersMock = {
+    date_initial: '2024-01-29',
+    date_final: '2024-01-29',
+    order_id: 1,
+    offset: 0,
+    limit: 10,
+    user_name: 'teste'
+};
+
+
+export const ordersRequestAllHeadersParamsMock = {
+    offset: 0,
+    limit: 10,
+    options: {
+        orderExternalId: 1,
+        user: { name: 'teste' },
+        orderDate: Between('20240129', '20240129')
     }
 };

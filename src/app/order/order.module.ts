@@ -1,8 +1,8 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { OrderController } from './order.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { LoggerModule } from 'src/helpers/logger/logger.module';
+import { LoggerModule } from '../../helpers/logger/logger.module';
 import { OrderProductsEntity } from './entities/order_products.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { OrderEntity } from './entities/order.entity';
@@ -20,5 +20,6 @@ import { OrderEntity } from './entities/order.entity';
   ],
   providers: [OrderService],
   controllers: [OrderController],
+  exports: [OrderService]
 })
 export class OrderModule { }

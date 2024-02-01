@@ -38,7 +38,7 @@ describe('OrderController', () => {
 
   describe('user index', () => {
 
-    it('test should return user list entity successfuly', async () => {
+    it('test should return user list entity successfully', async () => {
       const orders = await controller.index(mocks.ordersRequestMock as any);
 
       expect(orders).toEqual({
