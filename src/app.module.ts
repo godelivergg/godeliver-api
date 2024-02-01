@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from './helpers/logger/logger.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
@@ -7,6 +6,11 @@ import { UserModule } from './app/user/user.module';
 import { ProductModule } from './app/product/product.module';
 import { ImportModule } from './app/import/import.module';
 import { OrderModule } from './app/order/order.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { JwtModule } from '@nestjs/jwt';
+import { MulterModule } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
 
 @Module({
   imports: [
@@ -26,13 +30,24 @@ import { OrderModule } from './app/order/order.module';
         synchronize: true,
       } as TypeOrmModuleOptions),
     }),
+    JwtModule.register({
+      secret: process.env.JWT_SECRET_KEY
+    }),
+    MulterModule.register({
+      storage: diskStorage({
+        destination: '../public',
+        filename: (req, file, callback) => {
+          callback(null, file.originalname);
+        },
+      }),
+    }),
     LoggerModule,
     UserModule,
     ProductModule,
     ImportModule,
     OrderModule
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService]
 })
 export class AppModule { }
