@@ -39,10 +39,13 @@ export class ProductService {
     async createOrUpdate(data: ProductDto) {
 
         try {
-            const user = await this.productRepository.upsert(data, ['productExternalId']);
+            const productUpsert = await this.productRepository.upsert(data, ['productExternalId']);
             this.logger.logMessage(`${ProductMessagesHelper.SUCCESS_PRODUCT} ${data.productExternalId}`)
 
-            return user
+            const productUpsertId = productUpsert.identifiers[0].id
+            const product: ProductEntity = await this.findOne({ where: { id: productUpsertId } });
+
+            return product
         }
         catch (error) {
 

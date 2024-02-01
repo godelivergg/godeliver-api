@@ -19,7 +19,7 @@ describe('ProductService', () => {
           provide: getRepositoryToken(ProductEntity),
           useValue: {
             findOne: jest.fn().mockResolvedValue(mockProduct.productEntityList[0]),
-            upsert: jest.fn().mockResolvedValue(mockProduct.newProductEntity),
+            upsert: jest.fn().mockResolvedValue(mockProduct.productUpsert),
           },
         },
       ],
@@ -36,7 +36,7 @@ describe('ProductService', () => {
   });
 
   describe('findOne', () => {
-    it('test should return a user entity successfuly', async () => {
+    it('test should return a user entity successfully', async () => {
       const result = await service.findOne({ where: { id: '1' } });
 
       expect(result).toEqual(mockProduct.productEntityList[0]);
@@ -54,7 +54,7 @@ describe('ProductService', () => {
   });
 
   describe('createOrUpdate', () => {
-    it('test should create a new user entity successfuly', async () => {
+    it('test should create a new user entity successfully', async () => {
       const result = await service.createOrUpdate(mockProduct.createBody);
 
       expect(result).toEqual(mockProduct.productEntityList[0]);
