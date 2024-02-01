@@ -24,3 +24,11 @@ export const createBody: UserDto = {
     name: 'fake-name',
     userExternalId: 1,
 };
+
+export const userUpsert = {
+    identifiers: [
+        {
+            id: 1
+        }
+    ]
+};
