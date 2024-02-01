@@ -38,7 +38,7 @@ describe('ImportController', () => {
 
   describe('user index', () => {
 
-    it('test should return user list entity successfuly', async () => {
+    it('test should return user list entity successfully', async () => {
       const importList = await controller.index(mocks.importRequestMock as any);
 
       expect(importList).toEqual({

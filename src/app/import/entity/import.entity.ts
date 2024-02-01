@@ -15,7 +15,7 @@ export class ImportEntity {
     @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: string;
 
-    @Column({ name: 'finished_at', nullable: true, type: 'date' })
+    @Column({ name: 'finished_at', nullable: true })
     finishedAt: string
 
     @BeforeUpdate()
