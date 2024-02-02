@@ -28,6 +28,7 @@ export class OrderDto {
 export class OrderHeaders {
 
     user_name: string;
+    order_id: number;
     date_initial: string;
     date_final: string;
     limit: number;
