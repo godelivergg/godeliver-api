@@ -46,7 +46,7 @@ O projeto está integrado com TypeORM e precisa de uma instância Postgress roda
 # ajuste o arquivo .env
 Você pode seguir o exemplo com o arquivo .env.example e inserir as credenciais do banco.
 
-`É importante que você insira no POSTGRES_HOST o nome do serviço do banco - dbpostgres - contido no docker-compose caso vá gerar a imagem da API`
+É importante que você insira no POSTGRES_HOST o nome do serviço do banco - dbpostgres - contido no docker-compose caso vá gerar a imagem da API
 
 # subindo a API e banco
 $ docker compose up
@@ -58,4 +58,4 @@ Dessa forma você terá uma instância do banco e da API rodando em suas respect
 
 ## Autor
 
-- [Thayane Bomfim]([https://kamilmysliwiec.com](https://github.com/thayaneBomfims)https://github.com/thayaneBomfims)
+- [Thayane Bomfim](https://github.com/thayaneBomfims)
