@@ -45,7 +45,7 @@ export const ordersByUser: types.Order[] = [
             {
                 order_id: orderProductsEntityList[0].order.orderExternalId,
                 date: '2024-01-29',
-                total: '105.6',
+                total: '105.60',
                 products: [
                     {
                         product_id: productEntityList[0].productExternalId,
@@ -60,7 +60,7 @@ export const ordersByUser: types.Order[] = [
             {
                 order_id: orderProductsEntityList[1].order.orderExternalId,
                 date: '2024-01-29',
-                total: '105.6',
+                total: '105.60',
                 products: [
                     {
                         product_id: productEntityList[0].productExternalId,
@@ -78,12 +78,10 @@ export const ordersByUser: types.Order[] = [
 ]
 
 export const ordersRequestMock = {
-    headers: {
-        order_id: 1,
-        offset: 0,
-        limit: 10,
-        user_name: 'teste'
-    },
+    order_id: 1,
+    offset: 0,
+    limit: 10,
+    user_name: 'teste'
 };
 
 export const headerParams = {

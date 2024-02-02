@@ -18,6 +18,11 @@ export class ImportService {
         try {
             const importFiltered = await this.importRepository.find({
                 where: options,
+                order: {
+                    createdAt: 'DESC',
+                },
+                skip: 0,
+                take: 15,
             });
 
             return importFiltered;

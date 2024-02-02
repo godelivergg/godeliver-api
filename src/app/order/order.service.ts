@@ -7,7 +7,7 @@ import { OrderProductsEntity } from './entities/order_products.entity';
 import { OrderEntity } from './entities/order.entity';
 import * as utils from "../../helpers/utils.date"
 import * as types from "./types/order.types"
-import { OrderDto } from './dto/order.dto';
+import { OrderDto, OrderHeaders } from './dto/order.dto';
 import { OrderProductsDto } from './dto/orderProducts.dto';
 
 @Injectable()
@@ -124,7 +124,7 @@ export class OrderService {
         const orderWithProducts: types.OrderProducts = {
           order_id: order.orderExternalId,
           date: utils.formatDateToJson(order.orderDate),
-          total: String(totalValueProducts),
+          total: totalValueProducts.toFixed(2),
           products: orderProducts,
         };
 
@@ -153,7 +153,7 @@ export class OrderService {
     }
   }
 
-  async buildOptionsFromHeaders(headers: any): Promise<types.OrderHeaders> {
+  async buildOptionsFromHeaders(headers: OrderHeaders): Promise<types.OrderHeaders> {
     const dateInitialHeader = utils.formatDateToBD(headers['date_initial']);
     const dateFinalHeader = utils.formatDateToBD(headers['date_final']);
 

@@ -74,7 +74,8 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s",
       "!**/*.module.(t|j)s",
-      "!**/*.dto.(t|j)s"
+      "!**/*.dto.(t|j)s",
+      "!**/*.enum.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"

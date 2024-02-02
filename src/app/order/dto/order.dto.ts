@@ -1,5 +1,5 @@
 import { IsNotEmpty } from 'class-validator';
-import { UserEntity } from 'src/app/user/entity/user.entity';
+import { UserEntity } from '../../user/entity/user.entity';
 
 export class OrderDto {
     /**
@@ -22,5 +22,15 @@ export class OrderDto {
     */
     @IsNotEmpty()
     user: UserEntity;
+
+}
+
+export class OrderHeaders {
+
+    user_name: string;
+    date_initial: string;
+    date_final: string;
+    limit: number;
+    offset: number;
 
 }

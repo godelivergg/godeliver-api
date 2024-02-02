@@ -1,7 +1,8 @@
-import { Controller, Get, HttpStatus, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, HttpStatus, Headers, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../../auth/jwtAuth.guard';
 import { OrderService } from './order.service';
 import { ReturnDto } from '../../helpers/return.dto';
+import * as dto from "./dto/order.dto"
 
 
 @Controller('order')
@@ -11,9 +12,11 @@ export class OrderController {
 
     @Get()
     @UseGuards(JwtAuthGuard)
-    async index(@Req() request: Request): Promise<ReturnDto> {
+    async index(
+        @Headers() headers: dto.OrderHeaders
+    ): Promise<ReturnDto> {
 
-        const options = await this.orderService.buildOptionsFromHeaders(request.headers)
+        const options = await this.orderService.buildOptionsFromHeaders(headers)
 
         const orders = await this.orderService.findAll(options);
 
