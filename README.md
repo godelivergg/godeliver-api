@@ -40,7 +40,7 @@ $ yarn run test:cov
 
 ## Incrementais
 
-O projeto está integrado com TypeORM e precisa de uma instância Postgress rodando para se conectar. Você pode ter uma instância rodando e ajustar o .env ou caso tenha o docker instalado em sua máquina, basta seguir os passos abaixo:
+O projeto está integrado com TypeORM e precisa de uma instância Postgress rodando para se conectar. Você pode ter uma instância rodando e ajustar o .env ou caso tenha o docker instalado em sua máquina, basta seguir os passos abaixo.:
 
 ```bash
 # ajuste o arquivo .env
